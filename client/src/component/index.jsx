@@ -12,10 +12,10 @@ function Index() {
   return (
     <div className="card mt-5">
       <div className="card-body">
-        <h4 className="card-title">Jane Doe</h4>
+        <h4 className="card-title">하삐니</h4>
         <p className="card-text">
-          Some example text some example text. Jane Doe is an architect and
-          engineer
+          나는 문어 꿈을 꾸는 문어 꿈속에서는 무엇이든지 될 수 있어~~~ 나는 문어
+          잠을 자는 문어 잠에 드는 순간 여행이 시작되는 거야
         </p>
         <a onClick={moveLogin} className="btn btn-primary">
           See Profile
