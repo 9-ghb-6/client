@@ -1,8 +1,18 @@
-import express from "express";
+import express, { response } from "express";
 
 const router = express.Router();
 
 router.post("/login", (req, resp) => {
-    cosnole.log(req.body);
+    console.log(req.body);
+    if (Math.random() >= 0.5) {
+        resp.json({ result: true });
+    } else {
+        resp.json({ result: false });
+    }
 
-})
+});
+
+
+
+// mnodule.exports = router;
+export default router;

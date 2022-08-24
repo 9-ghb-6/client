@@ -28,4 +28,8 @@ function Index() {
     </div>
   );
 }
+{
+  /* <nav className="navbar navbar-expand-sm bg-dark navbar-dark">...</nav>; */
+}
+
 export default Index;
