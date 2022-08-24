@@ -3,23 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter } from 'react-router-dom';
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AuthAPI from './api/authAPI';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-
-/*
-설치할것들
-  npm i react-router-dom
-  npm i react-bootstrap bootstrap
-
-
-*/
