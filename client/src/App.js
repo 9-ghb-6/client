@@ -19,3 +19,6 @@ function App() {
 }
 
 export default App;
+
+// 모듈 설치
+// npm install react-bootstrap bootstrap
