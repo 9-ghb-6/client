@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Image from "react-bootstrap/Image";
 
 function Index() {
   const navigate = useNavigate();
@@ -20,11 +21,8 @@ function Index() {
           See Profile
         </a>
       </div>
-      <img
-        className="card-img-bottom"
-        src="../bootstrap4/img_avatar6.png"
-        alt="Card image"
-      />
+      <img className="card-img-bottom" alt="Card image" />
+      <a href="https://www.yeongnam.com/web/view.php?key=20170529.010260757340001"></a>
     </div>
   );
 }
