@@ -18,11 +18,6 @@ router.post("/auth", async (req, resp) => {
             const token = jwt.sign({ email: data.email }, process.env.SECRET_KEY, { expiresIn: 160 * 60 * 12 });
             resp.status(200).json({ result: true, message: data, token });
 
-
-
-
-
-
         } else {
             throw new Error("invalid username / password");
         }
