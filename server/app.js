@@ -30,7 +30,7 @@ app.listen(8080, () => {
     -mongoose
     -mongodb
     -dotenv
-    -jsonwebtoken
+    -jsonwebtoken : npm dotenv jsonwebtoken
 
 
 
