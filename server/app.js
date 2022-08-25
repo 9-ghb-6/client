@@ -32,6 +32,7 @@ app.listen(8080, () => {
     -mongodb
     -dotenv
     -jsonwebtoken : npm dotenv jsonwebtoken
+    -bcrypt : 암호화 해준다.
 
 
 
