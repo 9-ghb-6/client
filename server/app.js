@@ -51,7 +51,7 @@ app.listen(8080, () => {
     -mongoose
     -mongodb
     -dotenv
-    -jsonwebtoken : npm dotenv jsonwebtoken
+    -jsonwebtoken : npm i dotenv jsonwebtoken
     -bcrypt : 암호화 해준다.
 
 
