@@ -14,6 +14,7 @@ router.use((req, resp, next) => {
     }
 
     const token = authorization.split(" ")[1];  // 붙여서 쓰면  공백을 기준으로 나뉘는게 아니라 단어별로 나뉜다.
+    //                          (/\s/)
     try {
         const payload = jwt.verify(token, process.env.SECRET_KEY);
         req.logonEmail = payload.email;
