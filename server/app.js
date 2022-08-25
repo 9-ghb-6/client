@@ -6,6 +6,7 @@ import cors from "cors";
 import account from "./route/account.js"
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import history from "./route/history.js";
 
 dotenv.config();
 console.log(process.env.MONGODB_URI)
@@ -22,7 +23,7 @@ app.use(express.json());
 
 
 app.use("/api/account", account);
-// app.use("/api/history", history);
+app.use("/api/history", history);
 
 app.listen(8080, () => {
     console.log("[Server] start.");

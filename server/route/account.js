@@ -1,9 +1,11 @@
 import express from "express";
 import Account from "../model/account.js";
 import bcrypt from "bcrypt";
-
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 const router = express.Router();
 
+dotenv.config();
 router.post("/auth", async (req, resp) => {
     console.log(req.body);
     try {
@@ -11,7 +13,16 @@ router.post("/auth", async (req, resp) => {
         const data = await Account.findOne({ email });
         console.log(data);
         if (data && bcrypt.compareSync(password, data.password)) {
-            resp.status(200).json({ result: true, message: data });
+
+            //============================================================
+            const token = jwt.sign({ email: data.email }, process.env.SECRET_KEY, { expiresIn: 160 * 60 * 12 });
+            resp.status(200).json({ result: true, message: data, token });
+
+
+
+
+
+
         } else {
             throw new Error("invalid username / password");
         }
