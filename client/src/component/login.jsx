@@ -47,7 +47,7 @@ function Login() {
       </div>
       <div className="mb-3 mt-3 d-grid">
         <button type="submit" className="btn btn-primary bnt-block">
-          Submit
+          Signin
         </button>
       </div>
     </form>
