@@ -1,0 +1,10 @@
+API =
+	/api/account
+		/register[POST]
+			req : {email,password,name,gender,birth}
+			resp : { result: true / false , message : (실패를 했을 때) }
+
+		/auth	[POST]
+			req : {email,password(bcrypt}
+			resp : { result : true / false }
+

@@ -1,2 +1,7 @@
 MONGODB_URI="mongodb+srv://huba159:qpwo1029@cluster0.3ptehsi.mongodb.net/?retryWrites=true&w=majority"
 SECRET_KEY = "%74@A#ZPaOA@nU2RKwA*4!JRBsUai3@u"
+써주고
+
+모듈설치!!
+     -jsonwebtoken : npm i dotenv jsonwebtoken
+    -bcrypt : 암호화 해준다. npm i bcrypt
