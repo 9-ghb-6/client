@@ -21,6 +21,16 @@ app.use(morgan("[Server] : method : rul : status(:response-time ms|:date[iso])")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/test", (req, resp) => {
+    req.ch = "qwerwqer"
+    req.query.ho = "qwerqwerqwer"
+});
+
+app.use("test", (req, resp) => {
+    console.log("ch", req.query);
+    console.log("ho", req.ho);
+    resp.sendStatus(200);
+});
 
 app.use("/api/account", account);
 app.use("/api/history", history);
