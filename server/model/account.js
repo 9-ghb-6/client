@@ -1,4 +1,5 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
+
 
 const accountSchema = new mongoose.Schema({
     email: { type: String, unique: true },
@@ -6,7 +7,6 @@ const accountSchema = new mongoose.Schema({
     name: String,
     gender: String,
     birth: Number,
-
 });
 
 export default mongoose.model("account", accountSchema);

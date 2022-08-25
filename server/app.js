@@ -4,6 +4,14 @@ import morgan from "morgan";
 import cors from "cors";
 // const express = require("express");
 import account from "./route/account.js"
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+console.log(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {
+    dbName: "moneybook"
+})
 
 const app = express();
 
