@@ -6,7 +6,7 @@ class AccountAPI {
         }
         this.postOption = {
             method: "post",
-            Headers: {
+            headers: {
                 "content-type": "application/json"
             }
         }

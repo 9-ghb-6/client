@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom"
 
 function Login({ setLogon, accountAPI }) {
@@ -6,7 +6,7 @@ function Login({ setLogon, accountAPI }) {
   //props 로 전달받을 시 const{accountAPI, setLogon} = props;
   const email = useRef();
   const password = useRef();
-
+  const [error, setError] = useState(false);
 
 
 
@@ -16,9 +16,13 @@ function Login({ setLogon, accountAPI }) {
       .then((receieved) => {
         console.log(receieved);
         if (receieved.result) {
-          setLogon(receieved.result);
+          setLogon(email.current.value);
           console.log(receieved.token);// 토큰을 어딘가에 저장해야 될지 생각해봐.
+          localStorage.setItem("token", receieved.token);
           navigate("/");
+          setError(false);
+        } else {
+          setError(true);
         }
       });
   };
