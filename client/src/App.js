@@ -33,7 +33,7 @@ function App() {
     <div className="container">
       <Nav logon={logon} setLogon={setLogon} />
       <Routes>
-        <Route path="/" element={<Write />} />
+        <Route path="/" element={<History />} />
         <Route path="/login" element={<Login accountAPI={accountAPI} setLogon={setLogon} />} />
         <Route path="/history" element={<History />} />
         <Route path="/signup" element={<Signup />} />

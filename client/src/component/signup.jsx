@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
-
+import AccountAPI from "../api/accountAPI";
+import {useNavigate} from "react-router-dom"
 function Signup() {
   const email = useRef();
   const password = useRef();
@@ -10,6 +11,14 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    AccountAPI.auth(email.current.vaule ,password.current.value , name.current.value , gender.current.value , birth.current.value)
+    localStorage.setItem("email")
+      .then((rec) => {
+        console.log(rec)
+        if (rec.result) {
+          console.log(rec.)
+        }
+    })
     fetch("http://127.0.0.1:8080/api/signup", {
       method: "POST",
       headers: {
