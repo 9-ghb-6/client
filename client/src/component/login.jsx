@@ -13,12 +13,13 @@ function Login({ setLogon, accountAPI }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     accountAPI.auth(email.current.value, password.current.value)
-      .then((receieved) => {
-        console.log(receieved);
-        if (receieved.result) {
+      .then((received) => {
+        console.log(received);
+        if (received.result) {
           setLogon(email.current.value);
-          console.log(receieved.token);// 토큰을 어딘가에 저장해야 될지 생각해봐.
-          localStorage.setItem("token", receieved.token);
+          console.log(received.token);// 토큰을 어딘가에 저장해야 될지 생각해봐.
+          localStorage.setItem("token", received.token);
+          localStorage.setItem("email", email.current.value);
           navigate("/");
           setError(false);
         } else {

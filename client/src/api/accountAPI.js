@@ -11,11 +11,21 @@ class AccountAPI {
             }
         }
     }
+    
     // 로그인 인증 시
+    
     async auth(email, password) {
         const response = await fetch(this.baseURL+"/api/account/auth", {
             ...this.postOption,
             body: JSON.stringify({ email, password })
+        })
+        return await response.json();
+    }
+
+    async valid(token) {
+        const response = await fetch(this.baseURL+"/api/account/valid", {
+            ...this.postOption,
+            body: JSON.stringify({ token })
         })
         return await response.json();
     }
@@ -29,7 +39,7 @@ class AccountAPI {
     }
 
 
-}
+};
 
 
 

@@ -84,7 +84,7 @@ function Signup() {
       <div id="demo" class="collapse"></div>
       <div className="mb-3 mt-3 d-grid">
         <button type="submit" className="btn btn-primary bnt-block">
-          Sign Up
+          USING START !!!
         </button>
       </div>
     </form>
