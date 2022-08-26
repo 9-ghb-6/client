@@ -37,7 +37,7 @@ function Signup() {
       </div>
         <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>3  
     <div id="emailHelp" class="form-text">Email 주소는 누구에게도 공유되지 않습니다.</div>
   </div>
       <div className="form-floating mt-3 mb-3">
