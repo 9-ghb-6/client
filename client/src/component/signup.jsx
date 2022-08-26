@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import accountAPI from "../api/accountAPI";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function Signup() {

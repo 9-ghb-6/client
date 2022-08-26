@@ -1,11 +1,11 @@
 class AccountAPI {
     constructor(baseURL) {
-        this.baseURL = this.baseURL;
+        this.baseURL = baseURL;
         this.get = {
             method: "get"
         }
-        this.post = {
-            mothod: "post",
+        this.postOption = {
+            method: "post",
             Headers: {
                 "content-type": "application/json"
             }
@@ -13,7 +13,7 @@ class AccountAPI {
     }
     // 로그인 인증 시
     async auth(email, password) {
-        fetch(this.baseURL + "/api/account/auth", {
+        const response = await fetch(this.baseURL+"/api/account/auth", {
             ...this.postOption,
             body: JSON.stringify({ email, password })
         })

@@ -1,25 +1,25 @@
 import { useRef } from "react";
-import accountAPI from "../api/accountAPI";
+import { useNavigate } from "react-router-dom"
 
-function Login() {
+function Login({ setLogon, accountAPI }) {
+  const navigate = useNavigate();
+  //props 로 전달받을 시 const{accountAPI, setLogon} = props;
   const email = useRef();
   const password = useRef();
 
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://127.0.0.1:8080/api/login", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email.current.value,
-        password: password.current.value,
-      }),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
+    accountAPI.auth(email.current.value, password.current.value)
+      .then((receieved) => {
+        console.log(receieved);
+        if (receieved.result) {
+          setLogon(receieved.result);
+          console.log(receieved.token);// 토큰을 어딘가에 저장해야 될지 생각해봐.
+          navigate("/");
+        }
       });
   };
 
@@ -29,6 +29,7 @@ function Login() {
         <input
           type="text"
           className="form-control"
+          name="email"
           id="email"
           placeholder="Enter email"
           ref={email}
@@ -38,6 +39,7 @@ function Login() {
       <div className="form-floating mt-3 mb-3">
         <input
           type="password"
+          name="password"
           className="form-control"
           id="pwd"
           placeholder="Enter password"
