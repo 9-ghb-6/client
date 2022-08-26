@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import authAPI from "../api/authAPI";
+import accountAPI from "../api/accountAPI";
 
 function Login() {
   const email = useRef();

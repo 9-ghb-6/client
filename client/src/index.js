@@ -6,7 +6,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AuthAPI from './api/authAPI';
+import accountAPI from './api/accountAPI';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
