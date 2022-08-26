@@ -21,7 +21,7 @@ function Signup() {
         name: name.current.value,
         gender: gender.current.value,
         birth: birth.current.value,
-      }),
+      })
     })
       .then((response) => response.json())
       .then((json) => {
@@ -32,15 +32,14 @@ function Signup() {
   return (
     <form onSubmit={handleSubmit} className="mt-5">
       <div className="form-floating mb-3 mt-3">
-        <input
-          type="text"
-          className="form-control"
-          id="email"
-          placeholder="Enter email"
-          ref={email}
-        />
+        <input type="text" className="form-control" id="email" placeholder="Enter email" ref={email} />
         <label htmlFor="email">Email</label>
       </div>
+        <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <div id="emailHelp" class="form-text">Email 주소는 누구에게도 공유되지 않습니다.</div>
+  </div>
       <div className="form-floating mt-3 mb-3">
         <input
           type="password"
