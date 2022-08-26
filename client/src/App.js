@@ -10,7 +10,7 @@ import Nav from './component/nav'
 import Write from './component/write';
 import History from './component/history';
 
-const accountAPI = new AccountAPI("http://192.168.4.59:8080")
+const accountAPI = new AccountAPI("http://172.30.1.94:8080")
 function App() {
   const [logon, setLogon] = useState(null);
 
