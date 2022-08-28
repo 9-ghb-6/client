@@ -16,7 +16,7 @@ function Signup() {
       .then((rec) => {
         console.log(rec)
         if (rec.result) {
-          console.log(rec.)
+          console.log(rec.current.value)
         }
     })
     fetch("http://127.0.0.1:8080/api/signup", {
