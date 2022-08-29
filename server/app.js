@@ -7,6 +7,13 @@ import account from "./route/account.js"
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import history from "./route/history.js";
+import AccountAPI from "../client/src/api/accountAPI.js";
+import HistoryAPI from "../client/src/api/historyAPI.js";
+
+//cmd --> ipconfig
+const serverIp = "192.168.4.59";
+const accountAPI = new AccountAPI(`http://${serverIp}:8080`);
+const historyAPI = new HistoryAPI(`http://${serverIp}:8080`);
 
 
 dotenv.config();

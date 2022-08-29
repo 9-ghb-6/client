@@ -11,7 +11,8 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    AccountAPI.auth(email.current.vaule ,password.current.value , name.current.value , gender.current.value , birth.current.value)
+    AccountAPI.auth(email.current.vaule, password.current.value, name.current.value,
+      gender.current.value, birth.current.value)
     localStorage.setItem("email")
       .then((rec) => {
         console.log(rec)
@@ -40,13 +41,9 @@ function Signup() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-5">
-      <div className="form-floating mb-3 mt-3">
-        <input type="text" className="form-control" id="email" placeholder="Enter email" ref={email} />
-        <label htmlFor="email">Email</label>
-      </div>
         <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>3  
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
     <div id="emailHelp" class="form-text">Email 주소는 누구에게도 공유되지 않습니다.</div>
   </div>
       <div className="form-floating mt-3 mb-3">

@@ -42,6 +42,4 @@ class AccountAPI {
 };
 
 
-
-export default AccountAPI
-
+export default AccountAPI;

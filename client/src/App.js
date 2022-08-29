@@ -10,7 +10,7 @@ import Nav from './component/nav'
 import Write from './component/write';
 import History from './component/history';
 
-const accountAPI = new AccountAPI("http://172.30.1.94:8080")
+const accountAPI = new AccountAPI("http://192.168.4.59:8080")
 function App() {
   const [logon, setLogon] = useState(null);
 
@@ -33,7 +33,7 @@ function App() {
     <div className="container">
       <Nav logon={logon} setLogon={setLogon} />
       <Routes>
-        <Route path="/" element={<History />} />
+        <Route path="/" element={<nav />} />
         <Route path="/login" element={<Login accountAPI={accountAPI} setLogon={setLogon} />} />
         <Route path="/history" element={<History />} />
         <Route path="/signup" element={<Signup />} />

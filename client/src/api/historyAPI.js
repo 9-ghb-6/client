@@ -7,7 +7,7 @@ class HistoryAPI {
         this.getOption = {
             method: "get",
             headers: {
-                "authorization":"Bearer"+token
+                "authorization": "Bearer" + token
             }
         
         }
@@ -15,18 +15,25 @@ class HistoryAPI {
             mothod: "post",
             Headers: {
                 "content-type": "application/json",
-                "authorization":"bearer"+token
+                "authorization": "bearer" + token
             }
         }
     }
+    // 특정달의 데이터를 조회
+    async history(dateMonth) {
+        const response = await fetch(this.baseURL + "/api/history?month=" + month, {
+            ...this.getOption,
+        })
+        return await response.json();
+    }
 
-    async history( dateMonth) {
-        const response = await fetch(this.baseURL + "/api/history", {
-            ...this.postOption, 
-            body:JSON.stringify({dateMonth})
+
+    async write(itemDate,useDecs , cashAmt,cardAmt,category,tag) {
+        const response = await fetch(this.baseURL + "/api/history/write", {
+            ...this.postOption,
+            body: JSON.stringify({ itemDate, useDecs, cashAmt, cardAmt, category, tag })
         })
         return await response.json();
     }
 }
-
-export default HistoryAPI
+export default HistoryAPI;

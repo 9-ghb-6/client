@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { useEffect, useRef } from "react";
 import Write from "./write";
-
-function History({ datas }) {
+import HistoryItem from "./historyitem";
+function History({ datas,historyAPI }) {
     const monthRef = useRef();
+    const [items, setItems] = useState([]);
+
     useEffect(() => {
         const month = new Date().toISOString().slice(0, 7);
         monthRef.current.value = month;
+        historyAPI.history(month).then(received => {
+            if (received.result) {
+                setItems(received.datas);
+            }
+        })
     },[])
     
     return (<div className="mt-2">
@@ -18,6 +26,12 @@ function History({ datas }) {
                     data-bs-toggle="modal" data-bs-target="#write">
                 <i className="bi bi-pencil"></i>
             </button>
+        </div>
+        <div>
+            {items.map(one => {
+                return<HistoryItem data={one}/>
+            })
+            }
         </div>
         <div id="write" className="modal fade">
             <div className="modal-dialog">
